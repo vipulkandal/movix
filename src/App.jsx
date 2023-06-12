@@ -16,10 +16,10 @@ function App() {
   const { url } = useSelector((state) => state.home);
 
   useEffect(() => {
-    fetchApiConfig();
+    fetchBackdropImage();
   }, []);
 
-  const fetchApiConfig = () => {
+  const fetchBackdropImage = () => {
     fetchDataFromApi("/configuration").then((res) => {
       const url = {
         backdrop: res.images.secure_base_url + "original",
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
