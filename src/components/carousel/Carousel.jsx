@@ -43,6 +43,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
           <div className="data skeleton"></div>
         </div>
       </div>
+      
     );
   };
 
